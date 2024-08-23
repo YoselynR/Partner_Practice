@@ -10,9 +10,15 @@ editor_options:
 ```{r}
 install.packages("lterdatasampler")
 library(lterdatasampler)
+library(tidyverse)
 ```
 
 ```{r}
 View(pie_crab)
 ```
 
+```{r}
+# this is my additions
+ggplot(data = pie_crab, aes(x= size, y = latitude)) +
+   geom_point()
+```
