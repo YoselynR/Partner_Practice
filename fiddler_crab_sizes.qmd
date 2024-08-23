@@ -24,6 +24,8 @@ ggplot(data = pie_crab, aes(x= size, y = latitude)) +
 #| fig-cap: "This is my caption"
 ```
 
+The summary if for the crab carapace size by crab site with the mean, standard deviation, and total count.
+
 ```{r}
 #unfinalized summary
 my_summary<-data.frame(pie_crab$size,pie_crab$site)
@@ -33,3 +35,7 @@ size_summary<-my_summary%>%group_by(site=pie_crab$site)%>%summarize(mean=round(m
 size_summary
 ```
 
+```{r}
+# added units to column names
+colnames(size_summary) <- c("site", "mean (mm)", "sd (mm)", "total")
+```
