@@ -1,0 +1,18 @@
+---
+title: "fiddler_crab_sizes"
+author: "Yos"
+format: html
+editor: visual
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+install.packages("lterdatasampler")
+library(lterdatasampler)
+```
+
+```{r}
+View(pie_crab)
+```
+
