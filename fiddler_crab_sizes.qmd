@@ -31,3 +31,8 @@ my_summary<-data.frame(pie_crab$size,pie_crab$site)
 size_summary<-my_summary%>%group_by(site=pie_crab$site)%>%summarize(mean=round(mean(pie_crab$size),2),sd=sd(pie_crab$size),count=n())
 
 ```
+
+```{r}
+# added units to column names
+colnames(size_summary) <- c("site", "mean (mm)", "sd (mm)", "total")
+```
