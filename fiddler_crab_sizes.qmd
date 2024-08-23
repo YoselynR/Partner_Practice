@@ -4,21 +4,31 @@ author: "Yos"
 format: html
 editor: visual
 editor_options: 
+execute: 
+  echo: false
+  warning: false
   chunk_output_type: console
 ---
 
 ```{r}
-install.packages("lterdatasampler")
+#install.packages("lterdatasampler")
 library(lterdatasampler)
 library(tidyverse)
-```
-
-```{r}
-View(pie_crab)
 ```
 
 ```{r}
 # this is my additions
 ggplot(data = pie_crab, aes(x= size, y = latitude)) +
    geom_point()
+
+#| fig-cap: "This is my caption"
 ```
+
+```{r}
+#unfinalized summary
+my_summary<-data.frame(pie_crab$size,pie_crab$site)
+
+size_summary<-my_summary%>%group_by(site=pie_crab$site)%>%summarize(mean=round(mean(pie_crab$size),2),sd=sd(pie_crab$size),count=n())
+
+```
+
